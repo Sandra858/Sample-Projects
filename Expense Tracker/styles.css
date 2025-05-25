@@ -1,0 +1,355 @@
+/* ============Body============ */
+
+    /* Light mode */
+    body.light-mode {
+        background-color: #f9f9f9;  /* Very light gray */
+        color: #333333;             /* Dark charcoal */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+        background-color: #222222;  /* Rich dark charcoal */
+        color: wheat;               /* Warm soft tan */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+/*==========Header===================  */
+    /* header container */
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    /* header in Light mode */
+    body.light-mode #header{
+        background-color: #ffffff;
+        border-color: #ddd;
+    }
+
+    /* header in dark mode */
+    body.dark-mode #header{
+        background-color: #2c2c2c;
+        border-color: #444;
+    }
+
+    /* center section with title */
+
+    #header .center h1{
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+        color: inherit;
+    }
+
+    /* right summary boces */
+    #header .right {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    /* summary boxes styles */
+    #header .right  div {
+        background-color: rgba (255, 255, 255, 0.1);
+        padding: 0.8rem 1.2rem;
+        border-radius: 8px;
+        min-width: 100px;
+        text-align: center;
+        font-size: 1rem;
+        color: inherit;
+        box-shadow: 0 0 8px rgba (0, 0, 0, 0.1);
+        transition: backgroun-color 0.3s ease;
+    }
+
+    /*summary boxes in Light mode  */
+    body.light-mode #header .right div {
+        background-color: #f0f0f0;
+        color: #333;
+        box-shadow: 0 0 5px rgba( 0,0,0,0.1);
+
+    }
+    /* summary boxes in dark mode */
+    body.dark-mode .right div{
+        background-color: rgba(255, 255, 255, 0.1);
+        color: wheat;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    }
+
+/* =============Main Layout Structure============== */
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.left-aside {
+    flex: 0 0 200px;
+}
+
+.main-sections {
+    flex: 1;
+    padding: 1.5rem;
+    background-color:#ffffff ;
+    border-radius: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba (0, 0, 0 ,0.04);
+    transition:background-color 0.3s ease; 
+}
+
+body.dark-mode .main-sections{
+    background-color: #2a2a2a;
+    color: wheat;
+}
+
+    /* Transcations  */
+    .transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.transaction {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    color: #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Dark mode support */
+body.dark-mode .transaction {
+    background-color: #2e2e2e;
+    color: wheat;
+}
+
+/* Category color tags */
+.category.income {
+    color: #2e8b57; /* Sea green */
+}
+
+.category.expense {
+    color: #c0392b; /* Red */
+}
+
+.category.savings {
+    color: #2980b9; /* Blue */
+}
+
+.category.emergency {
+    color: #e67e22; /* Orange */
+}
+
+.category.others {
+    color: #8e44ad; /* Purple */
+}
+
+
+/* Hoveeeer effect */
+.transaction:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+/* Dark mode hover */
+body.dark-mode .transaction:hover {
+    background-color: #383838;
+
+
+}
+
+/* Graph styles---------=========== */
+.spending-graph {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+body.dark-mode .spending-graph {
+    background-color: #2a2a2a;
+}
+
+
+
+
+/* =============Navigation sides================== */
+    .right-aside {
+        background-color: #f0f0f0;
+        width: 180px;
+        padding: 1rem 1.5rem;
+        box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+        border-radius: 0 8px 8px 8px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+    }
+
+    body.dark-mode .right-aside {
+        background-color: #2b2b2b; /* Dark mode bg */
+        box-shadow: 2px 0 12px rgba(255,255,255,0.05);
+    }
+
+    /* nav ul a  */
+    .right-aside nav ul a {
+        display: block;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.6rem;
+        font-weight: 600;
+        font-size: 1rem;
+        color: inherit;
+        text-decoration:none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+    }
+    /* light mode hove effect */
+    .right-aside nav ul :hover,
+    .right-aside nav ul :focus {
+        background-color: #2c2c2c;
+        color: beige;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    /* darkmode hover effect */
+    body.dark-mode .right-aside nav ul :hover,
+    .right-aside nav ul :focus {
+        background-color: #a76767;
+        color: beige;
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+
+      .right-aside nav ul li {
+    margin-bottom: 0.6rem;
+    }
+    
+    /* ====Tooggle Buttons==== */
+    .right-aside .left{
+        margin-bottom: 100px;
+    }
+
+    .toggle-btn {
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid currentColor;
+        color: inherit;
+        padding: 0.5rem 0.75rem;
+        border-radius: 8px;
+        font-size: 1.25rem;
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        user-select: none;
+    }
+
+    /* dark mode hover toogle effect */
+    .toggle-btn:hover,
+    .toggle-btn:focus {
+    background-color: wheat;
+    color: #222222;
+    border-color: wheat;
+    outline: none;
+    }
+  
+/* ============Navigation other side========= */
+
+    /* light mode */
+    .left-aside{
+        background-color: #f5f5f5; /* Light mode */
+        width: 200px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.05);
+
+    }
+
+    /* dark mode */
+    body.dark-mode .left-aside {
+    background-color: #2a2a2a; /* Elegant dark shade */
+    box-shadow: -2px 0 10px rgba(255,255,255,0.03);
+    }
+
+    /* each box style */
+    .left-aside div {
+        padding: 1rem;
+        background-color: #ffffff;
+        color: #333;
+        border-radius: 10px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+    }
+
+    .left-aside > div:hover {
+    transform: translateY(-2px);
+    background-color: #f0e6d2; /* hint of wheat */
+    }
+
+    body.dark-mode .left-aside > div {
+        background-color: #1e1e1e;
+        color: wheat;
+    }
+
+    body.dark-mode .left-aside > div:hover {
+        background-color:#a76767;
+    }
+
+/*==================== Footer=========== */
+    /* Light mode */
+    footer{
+        background-color: #fafafa;
+        color: #333;
+        text-align: center;
+        font-size: 0.95rem;
+        border-top: 1px solid #ddd;
+        margin-top: 3rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    }
+
+    /* dark mode */
+    body.dark-mode footer {
+    background-color: #1e1e1e;
+    color: wheat;
+    border-top: 1px solid #444;
+    }
+
+    footer p:last-child {
+    font-weight: 500;
+    }
+
+    footer p:last-child::after {
+    content: " 💛";
+    }

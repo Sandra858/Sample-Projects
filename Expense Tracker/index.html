@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light-mode">
+    <div class="main-container">
+         <!--======== Header=========== -->
+        <header id="header">
+            <div class="center">
+                <h1>Expense Tracker Dashboard</h1>
+            </div>
+            <div class="right">
+                <div class="zero">
+                    Income <br> $300.00
+                </div>
+                <div class="one">
+                    Balance <br> $250.56
+                </div>
+                <div class="two">
+                     Expenses <br>$450.88
+                </div>
+                <div class="three">
+                   Savings <br> $7000.87
+                </div>
+
+            </div>
+                            
+        </header>
+
+        <div class="main-layout">
+            <!-- ========== right Aside ============ -->
+            <aside class="right-aside">
+                <nav>
+                    <ul>
+                        <li><a href="#dashboard"></a> Dashboard</li>
+                        <li><a href="#account"></a> Account</li>
+                        <li><a href="#settings"></a>Settings</li>
+                        <li><a href="#support"></a> Support</li>
+                        <li><a href="Logout"></a>Logout</li>
+                        <li><button id="mode-toggle" class="toggle-btn">🌙</button></li>
+                    </ul>
+                    
+                </nav>
+                               
+            </aside>
+
+            <!-- =====Main===== -->
+            <section class="main-sections">
+                <div class="spending-graph">
+                         <canvas id="spendingChart" width="400" height="200"></canvas>
+                </div>
+                    <h2>
+                        Latest Transactions
+                    </h2>
+                    <div class="transactions-list">
+                        <div class="transaction"><span>01/02/2024</span> | <span class="category income">Income</span> | <span>$1,200.00</span></div>
+                        <div class="transaction"><span>02/02/2024</span> | <span class="category emergency">Emergency</span> | <span>$300.00</span></div>
+                        <div class="transaction"><span>03/02/2024</span> | <span class="category expense">Expense</span> | <span>$150.75</span></div>
+                        <div class="transaction"><span>04/02/2024</span> | <span class="category savings">Savings</span> | <span>$500.00</span></div>
+                        <div class="transaction"><span>05/02/2024</span> | <span class="category expense">Expense</span> | <span>$65.90</span></div>
+                        <div class="transaction"><span>06/02/2024</span> | <span class="category others">Others</span> | <span>$40.00</span></div>
+                        <div class="transaction"><span>07/02/2024</span> | <span class="category income">Income</span> | <span>$950.00</span></div>
+                        <div class="transaction"><span>08/02/2024</span> | <span class="category savings">Savings</span> | <span>$250.00</span></div>
+                        <div class="transaction"><span>09/02/2024</span> | <span class="category emergency">Emergency</span> | <span>$180.00</span></div>
+                        <div class="transaction"><span>10/02/2024</span> | <span class="category expense">Expense</span> | <span>$220.30</span></div>
+                    </div>
+
+            </section>
+
+            <!-- left Aside -->
+            <aside class="left-aside">
+                    <div class="to-do">
+                        Add to-do list
+                    </div>
+                    <div class="shopping-list">
+                        Add to Shopping List
+                    </div>
+                    <div class="add-notes">
+                        Add Account
+                        Add notes
+                    </div>
+                    <div class="add-income">
+                        Add Income
+                    </div>
+                    <div class="add-expense">
+                        Add Expense
+                    </div>
+                    <div class="add-savings">
+                        Add Savings
+                    </div>
+            </aside>
+        </div>
+       
+  
+       
+  
+    
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Expense Tracker. All rights reserved.</p>
+        <p>Developed by Sandra Wandera &hearts;</p>
+    </footer>
+
+    <script>
+const ctx = document.getElementById('spendingChart').getContext('2d');
+const spendingChart = new Chart(ctx, {
+    type: 'bar', // or 'line', 'doughnut', 'pie'
+    data: {
+        labels: ['Income', 'Expense', 'Savings', 'Emergency', 'Other'],
+        datasets: [{
+            label: 'Spending Overview',
+            data: [300, 450.88, 7000.87, 300, 120], // Example data
+            backgroundColor: [
+                '#4caf50',
+                '#f44336',
+                '#2196f3',
+                '#ff9800',
+                '#9c27b0'
+            ],
+            borderRadius: 8
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: 'Spending Breakdown',
+                color: 'wheat',
+                font: {
+                    size: 18,
+                    weight: 'bold'
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: { color: 'wheat' }
+            },
+            y: {
+                ticks: { color: 'wheat' },
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+
+
+
+
+</body>
+<script src="script.js"></script>
+</html>
